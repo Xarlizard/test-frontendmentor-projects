@@ -48,6 +48,8 @@ button {
     font-weight: 600;
     margin: 7px 0px;
     cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 button:hover{
     color:hsl(0, 0%, 12%);
