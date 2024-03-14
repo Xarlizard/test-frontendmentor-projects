@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*
+ Colors
+
+Primary
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+Neutral
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: hsl(229, 6%, 66%);
+}
+
+h1{
+    font-weight: 600;
+    font-size: 23px;
+    color: hsl(234, 12%, 34%);
+}
+h2{
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+}
+h3{
+    font-weight: 200;
+    font-size: 23px;
+    color: hsl(234, 12%, 34%);
+}
+body{
+    display: flex; 
+    min-height: 100vh;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 98%);
+    padding: 25px;
+}
+header{
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+text{
+    font-size: 14px;
+}
+.container, .double{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+.card{  
+    box-shadow: 0 4px 8px 0 hsl(240, 3%, 85%), 0 6px 20px 0 hsl(231, 6%, 77%);
+    background-color: hsl(0, 0%, 100%);
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 20px;
+}
+#cyan{
+    border-top: 4px solid hsl(180, 62%, 55%);
+}
+#red{
+    border-top: 4px solid hsl(0, 78%, 62%);
+}
+#orange{
+    border-top: 4px solid hsl(34, 97%, 64%);
+}
+#blue{
+    border-top: 4px solid hsl(212, 86%, 64%);
+}
+p{
+    font-size: 12px;
+}
+.image{
+    padding-right: 15px;
+    text-align: right;
+}
+img{
+    max-width: 40px;
+    margin-top: 30px;
+}
+
+.attribution { font-size: 11px; text-align: center; color: hsl(234, 12%, 34%);}
+.attribution a { font-size: 11px; color: hsl(228, 45%, 44%); }
+
+@media (min-width: 700px){
+    header{
+        max-width: 500px;
+    }
+    .container{
+        flex-direction: row;
+    }
+}
