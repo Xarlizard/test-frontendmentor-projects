@@ -11,10 +11,10 @@
   <div>
     <div class="container">
         <div class="h1-container">
-          <img id="unfold" src="./assets/images/icon-star.svg" alt="star-icon">
+          <img src="./assets/images/icon-star.svg" alt="star-icon">
           <h1>FAQs</h1>
         </div>
-        <div class="unfold-button" class+="active">
+        <div id="unfold" class="unfold-button">
           <h2>What is Frontend Mentor, and how will it help me?</h2>
           <img src="./assets/images/icon-minus.svg">
         </div>
@@ -52,7 +52,11 @@
   </div>
   <script>
     const buttons = document.getElementsByClassName("unfold-button"); //loads all buttons
-    buttons[0].classList.toggle("active");
+    buttons[0].classList.toggle("active");                           // first button starts as active
+    const firstPanel = document.getElementById("first-panel");
+    firstPanel.style.display = "block";                              // first panel starts showing itself
+    firstPanel.style.opacity = 1;
+
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", function() {
         this.classList.toggle("active");
@@ -62,10 +66,12 @@
 
         if (panel.style.display === "block") {
           panel.style.display = "none";
-          img.src = "./assets/images/icon-plus.svg"
+          panel.style.opacity = 0;
+          img.src = "./assets/images/icon-plus.svg";
         } else {
           panel.style.display = "block";
-          img.src = "./assets/images/icon-minus.svg"
+          panel.style.opacity = 1;
+          img.src = "./assets/images/icon-minus.svg";
         }
       });
     }

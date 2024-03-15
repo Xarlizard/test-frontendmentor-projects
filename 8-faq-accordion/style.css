@@ -6,6 +6,14 @@ Colors
 - Grayish purple: hsl(292, 16%, 49%)
 - Dark purple: hsl(292, 42%, 14%)
 */
+@-webkit-keyframes fadeIn {                 /*Used for the panel appearing animation */
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
 
 *{
     margin: 0;
@@ -15,25 +23,30 @@ Colors
     box-sizing: border-box;
     font-family: 'Work Sans';
     color: hsl(292, 16%, 49%);
+    scrollbar-color: rgb(105, 21, 184) #e0e0e0;
+    scrollbar-width: thin;
 }
 body{
     padding: 20px;
-    background-color: hsl(275, 100%, 97%);
     min-height: 100vh;
-    margin: auto;
+    background-color: hsl(275, 100%, 97%);
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 hr{
-    color: hsl(292, 16%, 49%);
     opacity: 0.2;
     margin-top: 15px;
     margin-bottom: 15px;
+    color: hsl(292, 16%, 49%);
 }
 .container{
     margin: auto;
     padding: 20px;
-    background-color: white;
+    max-width: 540px;
+    margin-top: 100px;
     border-radius: 10px;
-    max-width: 350px;
+    background-color: white;
 }
 h1, h2{
     color: hsl(292, 42%, 14%);
@@ -54,15 +67,12 @@ h1, h2{
 .unfold-button{
     display: flex;
     flex-direction: row;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     justify-content: space-between;
     img{
         max-width: 30px;
         margin-left: 40px;
-        
-    }
-    img:checked{
-        src: './assets/images/icon-minus.svg';
     }
     h2{
         font-size: 17px;
@@ -70,16 +80,26 @@ h1, h2{
     }
 }
 .unfold-button:hover{ 
-    h2{color: rgb(105, 21, 184);}
     cursor: pointer;
+    h2{
+        color: rgb(105, 21, 184);
+    }
 }
-
 .panel {
     display: none;
     overflow: hidden;
-  }
-#first-panel{
-    display: block;
-  }
+    margin-bottom: 30px;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+}
+.panel:not(#firstPanel){  
+    opacity: 0;
+}
 .attribution { font-size: 11px; text-align: center; }
-.attribution a { font-size: 12px; color: hsl(292, 16%, 49%); }
+.attribution a { font-size: 12px; color: rgb(105, 21, 184); }
+
+@media only screen and (max-width:600px){
+    body{
+        background-image: url('./assets/images/background-pattern-mobile.svg');
+    }
+}
