@@ -1,3 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/*
+#Colors
 
+Primary
+- Soft blue: hsl(215, 51%, 70%)
+- Cyan: hsl(178, 100%, 50%)
+
+Neutral
+- Very dark blue (main BG): hsl(217, 54%, 11%)
+- Very dark blue (card BG): hsl(216, 50%, 16%)
+- Very dark blue (line): hsl(215, 32%, 27%)
+- White: hsl(0, 0%, 100%)
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 300;
+    box-sizing: border-box;
+    font-family: 'Outfit';
+}
+body{
+    background-color: hsl(217, 54%, 11%);
+    color: hsl(215, 51%, 70%);
+    padding: 20px;
+}
+.card{
+    margin: auto;
+    margin-top: 7%;
+    padding: 25px;
+    max-width: 350px;
+    border-radius: 15px;
+    background-color: hsl(216, 50%, 16%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    flex-direction: column;
+    display: flex;
+}
+.nftImg{
+    max-width: 100%;
+    border-radius: 10px;
+}
+h1{
+    color: white;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+p{
+    line-height: 30px;
+}
+.info{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+
+    .infoContent{
+        gap: 5px;
+        display: flex;
+        align-items: center;
+    }
+    #value{
+        color: hsl(178, 100%, 50%);
+        text{ font-weight: 400; }
+    }
+}
+hr{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-width: 0.5px;
+    border-style: solid;
+    opacity: 0.5;
+}
+.user{
+    display: flex;
+    align-items: center;
+
+    .userImg{
+        max-width: 35px;
+        margin-right: 20px;
+        border-radius: 50%;
+        border: 1.3px solid white;
+    }
+    .userName{
+        color: white;
+    }
+}
 .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { font-size: 12px; color: hsl(228, 45%, 44%); }
