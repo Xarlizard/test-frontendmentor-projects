@@ -1,2 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/*
+Colors
+- White: hsl(0, 0%, 100%)
+- Light pink: hsl(275, 100%, 97%)
+- Grayish purple: hsl(292, 16%, 49%)
+- Dark purple: hsl(292, 42%, 14%)
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    color: hsl(292, 16%, 49%);
+}
+body{
+    padding: 20px;
+    background-color: hsl(275, 100%, 97%);
+    min-height: 100vh;
+    margin: auto;
+}
+hr{
+    color: hsl(292, 16%, 49%);
+    opacity: 0.2;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.container{
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 350px;
+}
+h1, h2{
+    color: hsl(292, 42%, 14%);
+}
+.h1-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    img{
+        max-width: 20px;
+        margin-right: 25px;
+    }
+    h1{
+        font-size: 28px;
+        font-weight: 700;
+    }
+}
+.unfold-button{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    img{
+        max-width: 30px;
+        margin-left: 40px;
+        
+    }
+    img:checked{
+        src: './assets/images/icon-minus.svg';
+    }
+    h2{
+        font-size: 17px;
+        font-weight: 600;
+    }
+}
+.unfold-button:hover{ 
+    h2{color: rgb(105, 21, 184);}
+    cursor: pointer;
+}
+
+.panel {
+    display: none;
+    overflow: hidden;
+  }
+#first-panel{
+    display: block;
+  }
 .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { font-size: 12px; color: hsl(292, 16%, 49%); }
