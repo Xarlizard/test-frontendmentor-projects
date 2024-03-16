@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+/*#COLORS*/
+/*PRIMARY */
+--Light_red: hsl(0, 100%, 67%);
+--Orangey_yellow: hsl(39, 100%, 56%);
+--Green_teal: hsl(166, 100%, 37%);
+--Cobalt_blue: hsl(234, 85%, 45%);
+/*GRADIENTS*/
+--Light_slate_blue: hsl(252, 100%, 67%);              /*Background*/
+--Light_royal_blue: hsl(241, 81%, 54%);               /*Background*/
+--Violet_blue: hsla(256, 72%, 46%, 1);                /*Circle*/
+--Persian_blue: hsla(241, 72%, 46%, 0);               /*Circle*/
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Hanken Grotesk';
+}
+body{
+    display: grid;
+    place-items: center;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
