@@ -5,37 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
-  <title>Frontend Mentor | Results summary component</title>
-
+  <title>Results summary component</title>
 </head>
 <body>
-
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">xarlizard</a>.
+  <div>
+    <div class="container">
+      <div class="mainResult">
+        <h3>Your Result</h3>
+        <div class="circleResult">
+          <div class="result">
+            <h1>76</h1>
+            <p>of 100</p>
+          </div>
+        </div>
+        <h2>Great</h2>
+        <text>You scored higher than 65% of the people who have taken these tests.</text>
+      </div>
+      <div class="summary">
+        <h2>Summary</h2>
+        <div class="score">
+          <span> <img id="icon1" alt="icon"> <text id="category1"></text></span>
+          <text><b id="score1"></b> <text class="lowOpacity">/ 100</text></text>
+        </div>
+        <div class="score">
+          <span><img id="icon2"  alt="icon"><text id="category2"></text></span>
+          <text><b id="score2"></b> <text class="lowOpacity">/ 100</text></text>
+        </div>
+        <div class="score">
+          <span><img id="icon3"  alt="icon"><text id="category3"></text></span>
+         <text><b id="score3"></b> <text class="lowOpacity">/ 100</text></text>
+        </div>
+        <div class="score">
+          <span><img id="icon4"  alt="icon"><text id="category4"></text></span>
+          <text><b id="score4"></b> <text class="lowOpacity">/ 100</text></text>
+        </div>
+        <text class="button">Continue</text>
+      </div>
+    </div>
+    <br>
+    <div class="attribution">
+      Coded by <a href="#">xarlizard</a>.
+    </div>
   </div>
+  <script src="./script.js">
+    
+  </script>
 </body>
 </html>
