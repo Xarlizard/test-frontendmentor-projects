@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /*
 #Colors
-
 Primary
 - Soft blue: hsl(215, 51%, 70%)
 - Cyan: hsl(178, 100%, 50%)
-
 Neutral
 - Very dark blue (main BG): hsl(217, 54%, 11%)
 - Very dark blue (card BG): hsl(216, 50%, 16%)
@@ -23,14 +21,15 @@ Neutral
 }
 body{
     padding: 20px;
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
     color: hsl(215, 51%, 70%);
     background-color: hsl(217, 54%, 11%);
 }
 .card{
-    margin: auto;
     padding: 25px;
     display: flex;
-    margin-top: 7%;
     max-width: 350px;
     border-radius: 15px;
     flex-direction: column;
