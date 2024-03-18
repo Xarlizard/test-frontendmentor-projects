@@ -1,4 +1,4 @@
-[
+let data = [
   {
     "category": "Reaction",
     "score": 80,
