@@ -111,3 +111,9 @@ body{
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { font-size: 14px; color: var(--Orange); }
+
+@media only screen and (min-width: 600px){
+    body{
+        min-height: 100vh;
+    }
+}
