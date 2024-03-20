@@ -3,52 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>News homepage</title>
 
 </head>
 <body>
+  <main>
+    <div class="container">
+      <div class="menu">
+        <button>Home</button>
+        <button>New</button>
+        <button>Popular</button>
+        <button>Trending</button>
+        <button>Categories</button>
+      </div>
+      <div class="navigationBar">
+        <img src="./assets/images/logo.svg" alt="logo">
+        <img class="openMenu" src="./assets/images/icon-menu.svg" alt="icon-menu">
+      </div>
+      <div class="header">
+        <img class="headerImg" src="./assets/images/image-web-3-mobile.jpg" alt="image-web-3-mobile">
+        <div class="headerContent">
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+          <h1>The Bright Future of Web 3.0?</h1>
 
-  The Bright Future of Web 3.0?
+          <div class="headerText">
+            <text>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</text>
+            <button>READ MORE</button>
+          </div>
+        </div>
+      </div>
+      <div class="new">
+        <h2>New</h2>
 
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Coded by <a href="https://www.github.com/xarlizard">xarlizard</a>.
-  </div>
+        <h3>Hydrogen VS Electric Cars</h3>
+        <text>Will hydrogen-fueled cars ever catch up to EVs?</text>
+        <hr>
+        <h3>The Downsides of AI Artistry</h3>
+        <text>What are the possible adverse effects of on-demand AI image generation?</text>
+        <hr>
+        <h3>Is VC Funding Drying Up?</h3>
+        <text>Private funding by VC firms is down 50% YOY. We take a look at what that means.</text>
+      </div>
+      <div class="listContainer">
+          <div class="listItem">
+            <img class="listImg" src="./assets/images/image-retro-pcs.jpg" alt="image-retro-pcs">
+            <div class="itemText">
+              <h4>01</h4>
+              <h5>Reviving Retro PCs</h5>
+              <text>What happens when old PCs are given modern upgrades?</text>
+            </div>
+          </div>
+          <div class="listItem">
+            <img class="listImg" src="./assets/images/image-top-laptops.jpg" alt="image-top-laptops">
+            <div class="itemText">
+              <h4>02</h4>
+              <h5>Top 10 Laptops of 2022</h5>
+              <text>Our best picks for various needs and budgets.</text>
+            </div>
+          </div>
+          <div class="listItem">
+            <img class="listImg" src="./assets/images/image-gaming-growth.jpg" alt="image-gaming-growth">
+            <div class="itemText">
+              <h4>03</h4>
+              <h5>The Growth of Gaming</h5>
+              <text>How the pandemic has sparked fresh opportunities.</text>
+            </div>
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="attribution">
+      Coded by <a href="https://www.github.com/xarlizard">xarlizard</a>.
+    </div>
+    <br>
+  </main>
 </body>
 </html>
