@@ -1,4 +1,3 @@
-document.getElementById("autofocus").focus();
 const items = document.getElementsByClassName("item");             //we load all items needed to be filled
 const selectors = document.getElementsByClassName("selector");     //we load all buttons (Daily/Weekly/Monthly)
 let selected = "weekly";                                           //default timeframe that will load

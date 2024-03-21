@@ -72,7 +72,7 @@ body{
     color: white;
     cursor: pointer;
 }
-.selector:focus{
+.selectors .selector:focus{
     color: white;
     outline: none;
 }
