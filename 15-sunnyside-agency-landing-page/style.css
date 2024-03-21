@@ -16,10 +16,180 @@
 *{
     margin: 0;
     padding: 0;
+    font-size: 18px;
+    font-weight: 500;
     font-family: 'Barlow';
-    h1, h2, h3{
+    h1, h2, h3, button{
+        font-weight: 700;
         font-family: 'Fraunces';
     }
 }
-.attribution { font-size: 11px; text-align: center; }
+body{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    color: var(--Very_dark_desaturated_blue);
+    flex-direction: column;
+}
+header{
+    display: flex;
+    padding: 15px;
+    color: var(--White);
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-image: url('./images/mobile/image-header.jpg');
+    .navBar{
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 80px;
+        flex-direction: row;
+        justify-content: space-between;
+        img{
+            max-width: 100px;
+        }
+        .menu{
+            display: none;
+        }
+    }
+    .headerContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            text-align: center;
+            font-weight: 900;
+            font-size: 35px;
+            letter-spacing: 10px;
+        }
+        img{
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+    }
+}
+.square{
+    max-width: 100%;
+    img{
+        max-width: 100%;
+    }
+}
+.square:nth-of-type(2){
+    padding: 30px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    h2{
+        font-size: 30px;
+        font-weight: 900;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    text{
+        color: var(--Dark_grayish_blue);
+        margin-bottom: 30px;
+    }
+    button{
+        border: 0;
+        background: none;
+        font-size: 15px;
+        margin-bottom: 40px;
+        text-underline-position: below;
+        text-decoration-thickness: 5px;
+        text-decoration-line: underline;
+    }
+}
+#yellow{
+    button{
+        text-decoration-color: var(--Yellow);
+    }
+}
+#red{
+    button{
+        text-decoration-color: var(--Soft_red);
+    }
+}
+.rectangle:first-child{
+    color: var(--Dark_desaturated_cyan);
+    background-image: url('./images/mobile/image-graphic-design.jpg');
+}
+.rectangle:last-child{
+    color: var(--Dark_blue);
+    background-image: url('./images/mobile/image-photography.jpg');
+}
+.rectangle{
+    padding-top: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h2{
+        font-size: 25px;
+    }
+    text{
+        margin-top: 30px;
+        margin-bottom: 60px;
+        text-align: center;
+        padding-inline: 17px;
+    }
+}
+.testimonials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h2{
+        font-size: 16px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        letter-spacing: 5px;
+        color: var(--Grayish_blue);
+    }
+    .testimonial{
+        display: flex;
+        flex-direction: column;
+        img{
+            margin-top: 30px;
+            max-width: 60px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+        text{
+            margin-bottom: 30px;
+            padding-inline: 20px;
+        }
+        .position{
+            margin-top: 15px;
+            color: var(--Grayish_blue);
+        }
+
+    }
+}
+.footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--Dark_desaturated_cyan);
+    background-color: var(--Dark_moderate_cyan);
+    .logo{
+        margin-top: 30px;
+        width: 150px;
+        margin-bottom: 20px;
+        fill: hsl(167, 40%, 24%);
+    }
+    .footerMenu{
+        gap: 40px;
+        display: flex;
+        margin-bottom: 40px;
+    }
+    .contact{
+        margin-bottom: 60px;
+    }
+    
+}
+.attribution { font-size: 11px; text-align: center;}
 .attribution a { color: hsl(228, 45%, 44%); }
