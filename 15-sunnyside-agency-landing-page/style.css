@@ -1,3 +1,25 @@
+:root{
+    /* COLORS */
+    --Soft_red: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Dark_desaturated_cyan: hsl(167, 40%, 24%);        /* graphic design text */
+    --Dark_blue: hsl(198, 62%, 26%);                    /* photography text */
+    --Dark_moderate_cyan: hsl(168, 34%, 41%);           /* footer */
 
+    --Very_dark_desaturated_blue: hsl(212, 27%, 19%);
+    --Very_dark_grayish_blue: hsl(213, 9%, 39%);
+    --Dark_grayish_blue: hsl(232, 10%, 55%);
+    --Grayish_blue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+    /* Barlow weights: 600,  Fraunces weights: 700, 900 */
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow';
+    h1, h2, h3{
+        font-family: 'Fraunces';
+    }
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
