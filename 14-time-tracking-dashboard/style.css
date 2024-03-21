@@ -167,8 +167,6 @@ body{
             justify-content: space-between;
         }
     }
-    .right{
-    }
     .row{
         min-width: 100%;
         flex-direction: row;
