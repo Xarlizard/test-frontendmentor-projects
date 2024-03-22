@@ -221,13 +221,14 @@ header{
         max-width: 100%;
         display: flex;
         flex-direction: row;
-        img{
-            max-width: 50%;
-        }
+    }
+    .imageRow img{
+        max-width: 50%;
     }
 }
 .attribution { font-size: 11px; text-align: center;}
 .attribution a { color: var(--Dark_desaturated_cyan); }
+.attribution a:hover{ color: var(--White);}
 
 @media only screen and (min-width:650px) {
     .navBar{
@@ -284,10 +285,8 @@ header{
     .pair:first-of-type{
         flex-direction: row-reverse;
     }
-    .square:nth-child(1){
-        img{
-            min-width: 100%;
-        }
+    .square:nth-child(1) img{
+        min-width: 100%;
     }
     .square:nth-child(2){
         margin: 0;
@@ -335,10 +334,10 @@ header{
     .imageRow{
         max-width: 50%;
         min-width: 50%;
-        img{
-            min-width: 50%;
-            max-width: 50%;
-        }
+    }
+    .imageRow img{
+        min-width: 50%;
+        max-width: 50%;
     }
     .imageRow:first-child img:first-child{
         src: url('./images/desktop/image-gallery-milkbottles.jpg');
