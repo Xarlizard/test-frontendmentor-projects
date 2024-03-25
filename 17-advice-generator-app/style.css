@@ -44,7 +44,7 @@ body{
 .advice, #advice{
     margin-bottom: 20px;
 }
-.circle{
+#circle{
     margin-top: 30px;
     margin-bottom: -45px;
     width: 50px;
@@ -53,6 +53,16 @@ body{
     place-content: center;
     border-radius: 50%;
     background-color: var(--Neon_Green);
+    transition: .4s all; 
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { font-size: 11px; text-align: center;}
+.attribution a { color: var(--Grayish_Blue); font-size: 18px;}
+.attribution a:hover { color: var(--Neon_Green); }
+@media only screen and (min-width:900px) {
+    body{
+        min-height: 100vh;
+    }
+    .line{
+        content: url('./images/pattern-divider-desktop.svg');
+    }
+}
