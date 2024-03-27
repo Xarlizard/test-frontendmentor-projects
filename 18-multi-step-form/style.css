@@ -1,0 +1,203 @@
+:root{
+    /*COLORS*/
+    /*Primary*/
+    --Marine_blue: hsl(213, 96%, 18%);
+    --Purplish_blue: hsl(243, 100%, 62%);
+    --Pastel_blue: hsl(228, 100%, 84%);
+    --Light_blue: hsl(206, 94%, 87%);
+    --Strawberry_red: hsl(354, 84%, 57%);
+    /*Neutral*/
+    --Cool_gray: hsl(231, 11%, 63%);
+    --Light_gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+    /*Weights: 400, 500, 700*/
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Ubuntu';
+    color: var(--Cool_gray);
+}
+body{
+    padding: 20px;
+    background-position: top; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--Magnolia);
+    background-image: url('./assets/images/bg-sidebar-mobile.svg');
+}
+header{
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.page{
+    width: 25px;
+    height: 25px;
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    place-content: center;
+    color: var(--Alabaster);
+    border: 1px solid var(--Alabaster);
+}
+.pageInfo{
+    display: none;
+}
+#currentPage{
+    border: 0;
+    color: var(--Marine_blue);
+    background-color: var(--Light_blue);
+}
+h1, h2, h3{
+    color: var(--Marine_blue);
+}
+h1{
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.step{
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: var(--White);
+}
+.info{
+    margin-bottom: 20px;
+}
+#currentStep{
+    display: flex;
+}
+.one input{
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.plan label{
+    gap: 10px;
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid var(--Light_gray);
+}
+label h2{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.plan input[type="radio"] { display: none;}
+input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); background-color: var(--Magnolia);}
+.planSelector{
+    gap: 25px;
+    padding: 10px;
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--Magnolia);
+}
+.switch { position: relative; display: inline-block; width: 50px; height: 24px; }
+.switch input {  opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.switch input:checked + .slider {background-color: var(--Marine_blue);}
+.switch input:focus + .slider {box-shadow: 0 0 1px var(--Marine_blue);}
+.switch input:checked + .slider:before {-webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px);}
+.slider.round {border-radius: 34px;}
+.slider.round:before {border-radius: 50%;}
+#currentPlanTime{
+    color: var(--Marine_blue);
+}
+.addons{
+    gap: 10px;
+    padding: 10px;
+    display: flex; 
+    max-width: 100%;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--Light_gray);
+}
+.checkboxContent{
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkboxContent text{
+    font-size: 12px;
+}
+.checkboxContent h3{
+    color: var(--Purplish_blue);
+}
+input[type="checkbox"]:checked  + .checkboxContent{
+    border-color: var(--Purplish_blue);
+    background-color: var(--Magnolia);
+}
+footer{
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 20px;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--White);
+}
+footer .goBack{
+    display: none;
+    padding: 10px;
+    font-weight: 500;
+}
+footer .nextStep{
+    right: 0px;
+    display: none;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: var(--White);
+    padding-inline: 15px;
+    background-color: var(--Marine_blue);
+}
+#currentFooter, #lastFooter{
+    display: block;
+}
+.footerButton:hover{
+    cursor: pointer;
+}
+#lastFooter{
+    background-color: var(--Purplish_blue);
+}
