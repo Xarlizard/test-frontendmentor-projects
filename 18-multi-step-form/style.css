@@ -98,7 +98,7 @@ label h2{
     margin-bottom: 5px;
 }
 .plan input[type="radio"] { display: none;}
-input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); background-color: var(--Magnolia);}
+input[type="radio"]:checked + label:before { border: 1px solid var(--Purplish_blue); background-color: var(--Magnolia);}
 .planSelector{
     gap: 25px;
     padding: 10px;
