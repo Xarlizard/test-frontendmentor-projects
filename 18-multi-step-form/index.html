@@ -78,7 +78,7 @@
             <div>
               <h2>Arcade</h2>
               <text>$9/mo</text>
-              <text class="yearly" style="display:'block' ;color: var(--Marine_blue);">2 months free</text>
+              <text class="yearly" style="display:none ;color: var(--Marine_blue);">2 months free</text>
             </div>
           </label>
         </div>
@@ -89,7 +89,7 @@
             <div>
               <h2>Advanced</h2>
               <text>$12/mo</text>
-              <text class="yearly" style="display:'block' ;color: var(--Marine_blue);">2 months free</text>
+              <text class="yearly" style="display:none ;color: var(--Marine_blue);">2 months free</text>
             </div>
           </label>
         </div>
@@ -100,7 +100,7 @@
             <div>
               <h2>Pro</h2>
               <text>$15/mo</text>
-              <text class="yearly" style="display:'block' ;color: var(--Marine_blue); ">2 months free</text>
+              <text class="yearly" style="display:none ;color: var(--Marine_blue); ">2 months free</text>
             </div>
           </label>
         </div>
@@ -108,11 +108,11 @@
           <text class="planSelectorText">Monthly</text>
           <div>
             <label class="switch">
-              <input type="checkbox" checked onclick="changePlanTime()">
+              <input id="switchState" type="checkbox" onclick="changePlanTime()">
               <span class="slider round" ></span>
             </label>
           </div>
-          <text class="planSelectorText" id="currentPlanTime">Yearly</text>
+          <text class="planSelectorText" >Yearly</text>
         </div>
 
         <!-- Step 2 end -->
@@ -124,32 +124,36 @@
         <h1>Pick add-ons</h1>
         <text class="info">Add-ons help enhance your gaming experience.</text>
 
-        <div>
-          <h2>Online service</h2>
-          <text>Access to multiplayer games</text>
-        </div>
-        <h3>+$1/mo</h3>
-        <div class="addons">
-          <input class="addonsCheckbox" type="checkbox" id="d" />
-          <label class="checkboxContent" for="d">
+        <label class="addons" for="d">
+          <input class="addonsCheckbox" type="checkbox" id="d" onclick='checkit(this)'/>
+          <div class="checkboxContent">
             <div>
               <h2>Online service</h2>
               <text>Access to multiplayer games</text>
             </div>
-            <div><h3>+$1/mo</h3></div>
-          </label>
-        </div>
-        <div>
-          <h2>Larger storage</h2>
-          <text>Extra 1TB of cloud save</text>
-        </div>
-        <h3>+$2/mo</h3>
-
-        <div>
-          <h2>Customizable Profile</h2>
-          <text>Custom theme on your profile</text>
-        </div>
-        <h3>+$2/mo</h3>
+            <h3 class="addonPrice">+$1/mo</h3>
+          </div>
+        </label>
+        <label class="addons" for="e">
+          <input class="addonsCheckbox" type="checkbox" id="e" onclick='checkit(this)'/>
+          <div class="checkboxContent">
+            <div>
+              <h2>Large storage</h2>
+              <text>Extra 1TB of cloud save</text>
+            </div>
+            <h3 class="addonPrice">+$2/mo</h3>
+          </div>
+        </label>
+        <label class="addons" for="f">
+          <input class="addonsCheckbox" type="checkbox" id="f" onclick="checkit(this)"/>
+          <div class="checkboxContent">
+            <div>
+              <h2>Customizable Profile</h2>
+              <text>Custom theme on your profile</text>
+            </div>
+            <h3 class="addonPrice">+$2/mo</h3>
+          </div>
+        </label>
 
         <!-- Step 3 end -->
       </div>
@@ -189,26 +193,47 @@
     const steps = document.getElementsByClassName("step");
     const planSelectorText = document.getElementsByClassName("planSelectorText");
     const yearly = document.getElementsByClassName('yearly');
+    const yearlySwitch = document.getElementById('switchState');
+    const checkmarks = document.getElementsByClassName('addonsCheckbox');
+    const addonPrice = document.getElementsByClassName('addonPrice');
     const footButton = document.getElementsByClassName("footerButton");
     let current = 0;
     let last = 0;
-    let planTime = 1; //Yearly plan
+    planSelectorText[0].id = 'currentPlanTime';
+    planSelectorText[1].id = ''
+    yearlySwitch.checked = false;
+    checkmarks[0].checked = false;              //initialize all checkboxes as unchecked
+    checkmarks[1].checked = false;   
+    checkmarks[2].checked = false;   
+    
 
     function changePlanTime(){
-      if(planTime == 1){
-        planTime = 0;
+      if(!yearlySwitch.checked){
         planSelectorText[0].id = 'currentPlanTime';
         planSelectorText[1].id = ''
         yearly[0].style.display = 'none';
         yearly[1].style.display = 'none';
         yearly[2].style.display = 'none';
+        addonPrice[0].textContent = '+$10/yr'
+        addonPrice[1].textContent = '+$20/yr'
+        addonPrice[2].textContent = '+$20/yr'
       }else {
-        planTime = 1;
         planSelectorText[0].id = '';
         planSelectorText[1].id = 'currentPlanTime';
         yearly[0].style.display = 'block';
         yearly[1].style.display = 'block';
         yearly[2].style.display = 'block';
+        addonPrice[0].textContent = '+$1/mo'
+        addonPrice[1].textContent = '+$2/mo'
+        addonPrice[2].textContent = '+$2/mo'
+      }
+    }
+
+    function checkit(n){
+      if(n.checked){
+        n.parentNode.classList = "addons currentAddon";
+      }else{
+        n.parentNode.classList = "addons";
       }
     }
 

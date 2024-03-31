@@ -93,12 +93,12 @@ h1{
     margin-bottom: 10px;
     border: 1px solid var(--Light_gray);
 }
-label h2{
+.plan label h2{
     font-weight: 500;
     margin-bottom: 5px;
 }
 .plan input[type="radio"] { display: none;}
-input[type="radio"]:checked + label:before { border: 1px solid var(--Purplish_blue); background-color: var(--Magnolia);}
+input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); background-color: var(--Magnolia);}
 .planSelector{
     gap: 25px;
     padding: 10px;
@@ -146,25 +146,28 @@ input[type="radio"]:checked + label:before { border: 1px solid var(--Purplish_bl
     padding: 10px;
     display: flex; 
     max-width: 100%;
+    margin-bottom: 10px;
     align-items: center;
     border-radius: 5px;
+    justify-content: baseline;
     border: 1px solid var(--Light_gray);
 }
+ input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    accent-color: #473DFF;}
+.addons text{ font-size: 12px;}
+.addons h3{ color: var(--Purplish_blue);}
 .checkboxContent{
-    gap: 10px;
     display: flex;
+    min-width: 90%;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.checkboxContent text{
-    font-size: 12px;
-}
-.checkboxContent h3{
-    color: var(--Purplish_blue);
-}
-input[type="checkbox"]:checked  + .checkboxContent{
-    border-color: var(--Purplish_blue);
+.currentAddon{
     background-color: var(--Magnolia);
+    border-color: var(--Purplish_blue);
 }
 footer{
     left: 0px;
