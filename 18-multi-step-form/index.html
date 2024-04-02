@@ -72,8 +72,8 @@
         <h1>Select your plan</h1>
         <text class="info">You have the option of monthly or yearly billing.</text>
         <div class="plan">
-          <input type="radio" name="a" value="a" id="a" checked="checked"/>
-          <label for="a">
+          <input type="radio" name="a" value="a" id="a"/>
+          <label for="a"  onclick="changePlan(0);">
             <img src="./assets/images/icon-arcade.svg" alt="icon">
             <div>
               <h2>Arcade</h2>
@@ -84,7 +84,7 @@
         </div>
         <div class="plan">
           <input type="radio" name="a" value="b" id="b" />
-          <label for="b">
+          <label for="b" onclick="changePlan(1);">
             <img src="./assets/images/icon-advanced.svg" alt="icon">
             <div>
               <h2>Advanced</h2>
@@ -95,7 +95,7 @@
         </div>
         <div class="plan">
           <input type="radio" name="a" value="c" id="c" />
-          <label for="c">
+          <label for="c" onclick="changePlan(2);">
             <img src="./assets/images/icon-pro.svg" alt="icon">
             <div>
               <h2>Pro</h2>
@@ -125,7 +125,7 @@
         <text class="info">Add-ons help enhance your gaming experience.</text>
 
         <label class="addons" for="d">
-          <input class="addonsCheckbox" type="checkbox" id="d" onclick='checkit(this)'/>
+          <input class="addonsCheckbox" type="checkbox" id="d" onclick='checkit(this); show("online");'/>
           <div class="checkboxContent">
             <div>
               <h2>Online service</h2>
@@ -135,7 +135,7 @@
           </div>
         </label>
         <label class="addons" for="e">
-          <input class="addonsCheckbox" type="checkbox" id="e" onclick='checkit(this)'/>
+          <input class="addonsCheckbox" type="checkbox" id="e" onclick='checkit(this); show("storage");'/>
           <div class="checkboxContent">
             <div>
               <h2>Large storage</h2>
@@ -145,7 +145,7 @@
           </div>
         </label>
         <label class="addons" for="f">
-          <input class="addonsCheckbox" type="checkbox" id="f" onclick="checkit(this)"/>
+          <input class="addonsCheckbox" type="checkbox" id="f" onclick='checkit(this); show("profile");'/>
           <div class="checkboxContent">
             <div>
               <h2>Customizable Profile</h2>
@@ -164,16 +164,41 @@
         <h1>Finishing up</h1>
         <text class="info">Double-check everything looks OK before confirming.</text>
 
-        <!-- Dynamically add subscription and add-on selections here -->
-
-        <h2>Total (per month/year)</h2>
+        <div class="finishContainer">
+          <div class="finishInside">
+            <div class="checkboxContent">
+              <div style="display: flex; flex-direction: column;">
+                <text class="finishPlan"><text id="finishPlanText">Arcade</text> (<text id="finishPlanTime">Monthly</text>)</text>
+                <text>Change</text>
+              </div>
+              <h3 style=" font-weight: 500;" id="finishPlanPrice">$9/mo</h3>
+            </div>
+            <hr>
+            <div class="checkboxContent" id="online" style="display: none;">
+              <text>Online service</text>
+              <h3 class="finishAddonPrice">+$1/mo</h3>
+            </div>
+            <div class="checkboxContent" id="storage" style="display: none;">
+              <text>Large Storage</text>
+              <h3 class="finishAddonPrice">+$2/mo</h3>
+            </div>
+            <div class="checkboxContent" id="profile" style="display: none;">
+              <text>Customizable Profile</text>
+              <h3 class="finishAddonPrice">+$2/mo</h3>
+            </div>
+          </div>
+          <div class="finishTotal">
+            <h2>Total (per <text id="finishTotalTime">month</text>)</h2>
+            <h3 id="finishTotalPrice">$9/mo</h3>
+          </div>
+        </div>
 
         <!-- Step 4 end -->
       </div>
 
       <div class="step five">
         <!-- Step 5 start -->
-
+        <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you">
         <h1>Thank you!</h1>
 
         <text>Thanks for confirming your subscription! We hope you have fun 
@@ -189,43 +214,78 @@
     </footer>
   </main>
   <script>
-    const pages = document.getElementsByClassName("page");
-    const steps = document.getElementsByClassName("step");
-    const planSelectorText = document.getElementsByClassName("planSelectorText");
-    const yearly = document.getElementsByClassName('yearly');
-    const yearlySwitch = document.getElementById('switchState');
-    const checkmarks = document.getElementsByClassName('addonsCheckbox');
-    const addonPrice = document.getElementsByClassName('addonPrice');
+    const pages = document.getElementsByClassName("page");                //actual page that loads
+    const steps = document.getElementsByClassName("step");                //page number to show
+
+    const planText = document.getElementsByClassName("planSelectorText"); //Select you plan options
+    const yearly = document.getElementsByClassName('yearly');             //monthly/yearly text focus
+    const yearlySwitch = document.getElementById('switchState');          //monthly/yearly switch
+
+    const checkmarks = document.getElementsByClassName('addonsCheckbox'); //add-ons options
+    const addonPrice = document.getElementsByClassName('addonPrice');     //add-ons price
+
+    const finishPlanText = document.getElementById('finishPlanText');
+    const finishPlanTime = document.getElementById('finishPlanTime');
+    const finishPlanPrice = document.getElementById('finishPlanPrice');
+    const finishAddonPrice = document.getElementsByClassName('finishAddonPrice');
+    const finishTotalTime = document.getElementById('finishTotalTime');
+    const finishTotalPrice = document.getElementById('finishTotalPrice');
+
     const footButton = document.getElementsByClassName("footerButton");
-    let current = 0;
-    let last = 0;
-    planSelectorText[0].id = 'currentPlanTime';
-    planSelectorText[1].id = ''
-    yearlySwitch.checked = false;
+
+    let p = {                                 //prices and terminologies list
+      0:['Monthly','/mo', 1, 2, 2, 9, 12, 15],
+      1:['Yearly', '/yr', 10, 20, 20, 90, 120, 150],
+      2:['Arcade', 'Advanced', 'Pro'],
+      3:['$', '+$']
+    }
+    let selectedPlan = 5;
+    let t = 0;                                  //time: Monthly by default
+    let current = 0;                            //current page counter
+    let last = 0;                               //last page counter
+
+    document.getElementById('a').checked = true;
+    planText[0].id = 'currentPlanTime';
+    planText[1].id = ''
+    yearlySwitch.checked = false;               //initialize monthly/yearly switch as monthly
     checkmarks[0].checked = false;              //initialize all checkboxes as unchecked
     checkmarks[1].checked = false;   
     checkmarks[2].checked = false;   
     
+    function changePlan(newPlan){
+      selectedPlan = 5 + newPlan;
+      finishPlanText.textContent = p[2][newPlan];
+    }
 
-    function changePlanTime(){
+    function changePlanTime(){              //updates all prices to show value based on monthly/yearly plan
       if(!yearlySwitch.checked){
-        planSelectorText[0].id = 'currentPlanTime';
-        planSelectorText[1].id = ''
+        t = 0;
+        planText[0].id = 'currentPlanTime';
+        planText[1].id = ''
         yearly[0].style.display = 'none';
         yearly[1].style.display = 'none';
         yearly[2].style.display = 'none';
-        addonPrice[0].textContent = '+$10/yr'
-        addonPrice[1].textContent = '+$20/yr'
-        addonPrice[2].textContent = '+$20/yr'
+        addonPrice[0].textContent = p[3][1] + p[t][2] + p[t][1];
+        addonPrice[1].textContent = p[3][1] + p[t][3] + p[t][1];
+        addonPrice[2].textContent = p[3][1] + p[t][3] + p[t][1];
+        finishPlanTime.textContent = p[t][0];
+        finishAddonPrice[0].textContent = p[3][1] + p[t][2] + p[t][1];
+        finishAddonPrice[1].textContent = p[3][1] + p[t][3] + p[t][1];
+        finishAddonPrice[2].textContent = p[3][1] + p[t][3] + p[t][1];
       }else {
-        planSelectorText[0].id = '';
-        planSelectorText[1].id = 'currentPlanTime';
+        t = 1;
+        planText[0].id = '';
+        planText[1].id = 'currentPlanTime';
         yearly[0].style.display = 'block';
         yearly[1].style.display = 'block';
         yearly[2].style.display = 'block';
-        addonPrice[0].textContent = '+$1/mo'
-        addonPrice[1].textContent = '+$2/mo'
-        addonPrice[2].textContent = '+$2/mo'
+        addonPrice[0].textContent = p[3][1] + p[t][2] + p[t][1];
+        addonPrice[1].textContent = p[3][1] + p[t][3] + p[t][1];
+        addonPrice[2].textContent = p[3][1] + p[t][3] + p[t][1];
+        finishPlanTime.textContent = p[t][0];
+        finishAddonPrice[0].textContent = p[3][1] + p[t][2] + p[t][1];
+        finishAddonPrice[1].textContent = p[3][1] + p[t][3] + p[t][1];
+        finishAddonPrice[2].textContent = p[3][1] + p[t][3] + p[t][1];
       }
     }
 
@@ -237,13 +297,34 @@
       }
     }
 
+    function show(showthis){
+      if(document.getElementById(showthis).style.display == "none"){
+        document.getElementById(showthis).style.display = "flex";
+      }else {
+        document.getElementById(showthis).style.display = "none";
+      }
+    }
+
+    function changePlanValue(){
+      let totalValue = 0;
+      totalValue += p[t][selectedPlan];
+      finishTotalTime.textContent = t == 0 ? 'month' : 'year';
+      finishPlanPrice.textContent = p[3][0] + p[t][selectedPlan] + p[t][1];
+
+      for (let i = 0; i < checkmarks.length; i++){
+        if(checkmarks[i].checked){
+          totalValue += p[t][2+i];
+        }
+      }
+      finishTotalPrice.textContent = p[3][0] + totalValue + p[t][1];;
+    }
+
     function prevPage() {
       last = current;
       current -= 1;
       steps[last].id= '';
       steps[current].id = 'currentStep';
       pages[last].id = 'none';
-
       pages[current].id = 'currentPage';
 
       if(current == 0){footButton[0].id = '';}
@@ -251,19 +332,20 @@
     }
 
     function nextPage() {
+
       last = current;
       current += 1;
-
       steps[last].id= '';
-      
       steps[current].id = 'currentStep';
-      if(current == 4){ document.getElementsByClassName('footer')[0].style.display = 'none'; return true;}
-      if(current == 3){footButton[1].id = 'lastFooter';footButton[1].textContent = 'Continue';}
+
+      if(current == 4){ document.getElementsByClassName('footer')[0].style.display = 'none'; return true; }
+      if(current == 3){ footButton[1].id = 'lastFooter'; footButton[1].textContent = 'Continue'; }
 
       pages[last].id = 'none';
       pages[current].id = 'currentPage';
 
       if(current > 0){footButton[0].id = 'currentFooter';}
+      if(steps[3].id == 'currentStep'){ changePlanValue(); }
     }
   </script>
 </body>

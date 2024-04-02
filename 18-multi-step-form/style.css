@@ -169,6 +169,50 @@ input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); ba
     background-color: var(--Magnolia);
     border-color: var(--Purplish_blue);
 }
+.finishContainer{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.finishInside{
+    gap: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: var(--Magnolia);
+}
+.finishPlan, #finishPlanText, #finishPlanTime{
+    font-weight: 500;
+    color: var(--Marine_blue);
+}
+.finishInside hr{
+    border: 0.5px solid var(--Light_gray);
+}
+.finishTotal{
+    display: flex;
+    padding-inline: 20px;
+    justify-content: space-between;
+}
+.finishTotal h3{
+    color: var(--Purplish_blue);
+    font-weight: 700;
+}
+#finishTotalTime{
+    color:  var(--Marine_blue);
+}
+.five{
+    align-items: center;
+    padding: 30px;
+}
+.five img{
+    max-width: 50px;
+    margin-top: 50px;
+}
+.five text{
+    margin-bottom: 50px;
+    text-align: center;
+}
 footer{
     left: 0px;
     right: 0px;
