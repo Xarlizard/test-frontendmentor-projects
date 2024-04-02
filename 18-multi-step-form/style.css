@@ -141,6 +141,10 @@ input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); ba
 #currentPlanTime{
     color: var(--Marine_blue);
 }
+.plan label:hover{
+    cursor: pointer;
+    border-color: var(--Purplish_blue);
+}
 .addons{
     gap: 10px;
     padding: 10px;
@@ -169,6 +173,10 @@ input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); ba
     background-color: var(--Magnolia);
     border-color: var(--Purplish_blue);
 }
+.addons:hover{
+    cursor: pointer;
+    border-color: var(--Purplish_blue);
+}
 .finishContainer{
     gap: 20px;
     display: flex;
@@ -185,6 +193,13 @@ input[type="radio"]:checked + label { border: 1px solid var(--Purplish_blue); ba
 .finishPlan, #finishPlanText, #finishPlanTime{
     font-weight: 500;
     color: var(--Marine_blue);
+}
+.finishPlanChange{
+    text-decoration: underline;
+}
+.finishPlanChange:hover{
+    color: var(--Purplish_blue);
+    cursor: pointer;
 }
 .finishInside hr{
     border: 0.5px solid var(--Light_gray);
@@ -228,6 +243,9 @@ footer .goBack{
     padding: 10px;
     font-weight: 500;
 }
+.goBack:hover{
+    color: var(--Marine_blue);
+}
 footer .nextStep{
     right: 0px;
     display: none;
@@ -237,6 +255,9 @@ footer .nextStep{
     color: var(--White);
     padding-inline: 15px;
     background-color: var(--Marine_blue);
+}
+.nextStep:hover{
+    background-color: var(--Cool_gray);
 }
 #currentFooter, #lastFooter{
     display: block;
@@ -255,6 +276,7 @@ footer .nextStep{
         justify-content: center;
     }
     .desktopContainer{
+        margin-top: 10vh;
         display: flex;
         padding: 15px;
         min-width: 900px;

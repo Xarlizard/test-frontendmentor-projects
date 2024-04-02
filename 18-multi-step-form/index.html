@@ -170,7 +170,7 @@
             <div class="checkboxContent">
               <div style="display: flex; flex-direction: column;">
                 <text class="finishPlan"><text id="finishPlanText">Arcade</text> (<text id="finishPlanTime">Monthly</text>)</text>
-                <text>Change</text>
+                <text class="finishPlanChange" onclick="returnPlanSelector();">Change</text>
               </div>
               <h3 style=" font-weight: 500;" id="finishPlanPrice">$9/mo</h3>
             </div>
@@ -319,6 +319,15 @@
         }
       }
       finishTotalPrice.textContent = p[3][0] + totalValue + p[t][1];;
+    }
+
+    function returnPlanSelector(){
+      last = current;
+      current = 1;
+      pages[last].id = 'none';
+      pages[current].id = 'currentPage';
+      steps[last].id= '';
+      steps[current].id = 'currentStep';
     }
 
     function prevPage() {
