@@ -12,33 +12,34 @@
 </head>
 <body>
   <!-- Sidebar start -->
+  <div class="desktopContainer">
   <header>
     <div class="pagination">
       <div class="page" id="currentPage">1</div>
       <div class="pageInfo">
-        Step 1
-        Your info
+        <text>STEP 1</text>
+        <h4 class="whiteStrong">YOUR INFO</h4>
       </div>
     </div>
     <div class="pagination">
       <div class="page">2</div>
       <div class="pageInfo">
-        Step 2
-        Select plan
+        <text>STEP 2</text>
+        <h4 class="whiteStrong">SELECT PLAN</h4>
       </div>
     </div>
     <div class="pagination">
       <div class="page">3</div>
       <div class="pageInfo">
-        Step 3
-        Add-ons
+        <text>STEP 3</text>
+        <h4 class="whiteStrong">ADD-ONS</h4>
       </div>
     </div>
     <div class="pagination">
       <div class="page">4</div>
       <div class="pageInfo">
-        Step 4
-        Summary
+        <text>STEP 4</text>
+        <h4 class="whiteStrong">SUMMARY</h4>
       </div>
     </div>
 </header>
@@ -198,7 +199,7 @@
 
       <div class="step five">
         <!-- Step 5 start -->
-        <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you">
+        <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you ">
         <h1>Thank you!</h1>
 
         <text>Thanks for confirming your subscription! We hope you have fun 
@@ -213,6 +214,7 @@
       <div class="footerButton nextStep" id="currentFooter" onclick="nextPage()">Next Step</div>
     </footer>
   </main>
+  </div>
   <script>
     const pages = document.getElementsByClassName("page");                //actual page that loads
     const steps = document.getElementsByClassName("step");                //page number to show
